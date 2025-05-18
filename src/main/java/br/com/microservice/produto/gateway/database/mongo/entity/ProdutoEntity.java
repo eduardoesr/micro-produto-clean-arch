@@ -1,5 +1,6 @@
 package br.com.microservice.produto.gateway.database.mongo.entity;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -7,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigDecimal;
 
 @Document(collection = "produto")
+@RequiredArgsConstructor
 public class ProdutoEntity {
     @Id
     private String id;

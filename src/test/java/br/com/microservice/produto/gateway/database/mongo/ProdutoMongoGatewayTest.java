@@ -63,7 +63,7 @@ class ProdutoMongoGatewayTest {
     }
 
     @Test
-    void findByCpfWithRuntimeException() {
+    void findBySkuWithRuntimeException() {
         Mockito.when(repository.findBySku(any())).thenThrow(new RuntimeException());
 
         Assertions.assertThrows(

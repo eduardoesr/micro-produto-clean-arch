@@ -7,10 +7,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +27,14 @@ public class ReadProdutoController {
     )
     public ResponseEntity<ProdutoDTO> findById(@PathVariable String id) {
         return ResponseEntity.ok(useCase.find(id));
+    }
+
+    @GetMapping("/listar")
+    @Operation(
+            summary = "Listar todos os produtos das skus especificadas."
+    )
+    public ResponseEntity<List<ProdutoDTO>> findBySku(@RequestParam List<String> sku) {
+        return ResponseEntity.ok(useCase.findAllBySku(sku));
     }
 
     @GetMapping

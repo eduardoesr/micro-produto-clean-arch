@@ -84,7 +84,7 @@ public class ProdutoMongoGateway implements CrudProdutoGateway {
     @Override
     public Produto save(Produto produto) {
         if (produto == null) {
-            throw new ProdutoMongoError.ProdutoInvalidArgumentException("O pliente não pode ser nulo.");
+            throw new ProdutoMongoError.ProdutoInvalidArgumentException("O produto não pode ser nulo.");
         }
         try {
             ProdutoEntity entity = ProdutoMapper.mapToEntity(produto);

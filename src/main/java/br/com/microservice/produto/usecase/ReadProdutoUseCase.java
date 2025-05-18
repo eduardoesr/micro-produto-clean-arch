@@ -28,4 +28,12 @@ public class ReadProdutoUseCase {
         List<Produto> produtos = gateway.findAll(page);
         return produtos.stream().map(ProdutoMapper::mapToDTO).toList();
     }
+
+    public List<ProdutoDTO> findAllBySku(List<String> skus) {
+        List<Produto> produtos = skus.stream()
+                .map(sku -> gateway.findBySku(sku)
+                        .orElseThrow(() -> new ProdutoError.ProdutoNotFoundException("Produto com SKU " + sku + " não encontrado.")))
+                .toList();
+        return produtos.stream().map(ProdutoMapper::mapToDTO).toList();
+    }
 }

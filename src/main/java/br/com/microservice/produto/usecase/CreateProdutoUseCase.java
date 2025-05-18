@@ -24,7 +24,7 @@ public class CreateProdutoUseCase {
 
         if(opProduto.isPresent()) {
 //            log.info(
-//                    "Não foi possivel savar um produto, SKU já utilizada",
+//                    "Não foi possivel salvar um produto, SKU já utilizada"
 //            );
             throw new ProdutoError.ProdutoAlreadyExistsException("Esse SKU já foi utilizado."); //TODO implementar erros personalizados
         }

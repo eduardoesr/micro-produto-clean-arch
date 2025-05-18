@@ -1,7 +1,6 @@
 package br.com.microservice.produto.controller;
 
 import br.com.microservice.produto.domain.Produto;
-import br.com.microservice.produto.dto.rest_controller.InputCreateProdutoDTO;
 import br.com.microservice.produto.gateway.CrudProdutoGateway;
 import br.com.microservice.produto.usecase.DeleteProdutoUseCase;
 import br.com.microservice.produto.utils.ProdutoMockData;

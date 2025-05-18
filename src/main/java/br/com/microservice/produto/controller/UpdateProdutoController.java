@@ -10,9 +10,6 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.util.HashSet;
-
 @RestController
 @RequestMapping("update-produto")
 @Tag(name = "Produto", description = "Endpoints que modificam, controla, cria e deleta produtos")

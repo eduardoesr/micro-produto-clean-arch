@@ -20,8 +20,8 @@ public class Produto {
 
     private Produto(String id, String nome, String sku, BigDecimal preco) {
         this.id = id;
-        this.nome = validaNome(nome);
-        this.sku = sku;
+        this.nome = validaNome(nome, "Nome");
+        this.sku = validaNome(sku, "SKU");
         this.preco = validaPreco(preco);
     }
 
@@ -52,9 +52,9 @@ public class Produto {
         );
     }
 
-    private String validaNome(String nome) {
+    private String validaNome(String nome, String texto) {
         if (nome.trim().length() < TAMANHO_NOME_MIN) {
-            throw new ProdutoError.ProdutoIllegalArgumentException("Nome não pode ser vazio.");
+            throw new ProdutoError.ProdutoIllegalArgumentException(texto + " não pode ser vazio.");
         }
         return nome;
     }

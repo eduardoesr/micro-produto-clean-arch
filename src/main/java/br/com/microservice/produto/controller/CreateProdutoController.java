@@ -28,7 +28,7 @@ public class CreateProdutoController {
 
     @PostMapping
     @Operation(
-            summary = "Cria uma novo produto"
+            summary = "Cria um novo produto"
     )
     public ResponseEntity<ProdutoDTO> create(@Valid @RequestBody InputCreateProdutoDTO input) {
         return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(useCase.create(
