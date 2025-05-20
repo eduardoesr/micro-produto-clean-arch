@@ -69,19 +69,6 @@ public class ProdutoMongoGateway implements CrudProdutoGateway {
     }
 
     @Override
-    public List<Produto> findAll() {
-        try {
-            return repository.findAll()
-                    .stream()
-                    .map(ProdutoMapper::mapToDomain)
-                    .toList();
-        } catch (Exception e) {
-//            log.error("Falha ao listar produtos.", e);
-            throw new ProdutoMongoError.ProdutoPersistenceException("Erro ao acessar o banco de dados.", e);
-        }
-    }
-
-    @Override
     public Produto save(Produto produto) {
         if (produto == null) {
             throw new ProdutoMongoError.ProdutoInvalidArgumentException("O produto não pode ser nulo.");

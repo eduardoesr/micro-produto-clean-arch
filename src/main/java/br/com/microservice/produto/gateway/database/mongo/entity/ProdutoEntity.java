@@ -28,31 +28,15 @@ public class ProdutoEntity {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
-
     public String getSku() {
         return sku;
-    }
-
-    public void setSku(String sku) {
-        this.sku = sku;
     }
 }

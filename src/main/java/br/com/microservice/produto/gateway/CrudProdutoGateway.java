@@ -10,7 +10,6 @@ public interface CrudProdutoGateway {
     Optional<Produto> findBySku(String sku);
     Optional<Produto> findById(String id);
     Boolean existId(String id);
-    List<Produto> findAll();
     Produto save(Produto produto);
     void deleteById(String id);
     List<Produto> findAll(Pageable page);
