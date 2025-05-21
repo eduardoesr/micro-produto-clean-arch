@@ -3,10 +3,8 @@
 - Introdução
 - Funções
 - Tecnologias
-- Infraestrutura Cloud
 - Instalação
 - Banco de dados
-- Fluxo principal
 - API
 - Qualidade de software
 
